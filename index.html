@@ -1,181 +1,379 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>ElitePips</title>
-<meta name="description" content="Answer one quick question to join free Forex signals on Telegram. Limited access available!"/>
-<meta name="theme-color" content="#001022">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pankaj Bhardwaj - Market Intelligence</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --border-color: #1e293b;
+            --accent-blue: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+        }
 
-<!-- Meta Pixel (left as-is) -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1593721464926438');
-fbq('track', 'PageView');
-</script>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-<style>
-:root{
-  --accent1:#ff7a00; /* warm FOMO accent */
-  --accent2:#ff4d00;
-  --text:#e6eefb;
-  --muted:#bfcfe6;
-  --card-bg:rgba(6,8,15,0.9);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  background:linear-gradient(160deg,#001022,#002a4a);
-  display:flex;align-items:center;justify-content:center;
-  padding:18px;color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-}
-.container{
-  width:100%;max-width:640px;
-  background:var(--card-bg);
-  border-radius:14px;padding:20px;
-  box-shadow:0 24px 60px rgba(0,10,30,0.6);
-  position:relative;overflow:hidden;color:var(--text);
-}
-.progressWrap{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.progress{flex:1;height:9px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
-.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;transition:width .45s ease}
-.progressNum{min-width:44px;text-align:right;color:var();font-weight:700;font-size:13px}
-.question{animation:fadeIn .32s ease;text-align:center;margin-bottom:14px}
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.hype{
-  display:inline-block;padding:10px 14px;border-radius:12px;font-weight:900;font-size:20px;
-  background:linear-gradient(90deg,#ffd9b3,#ffb48a);color:#1b0520;
-  box-shadow:0 8px 30px rgba(255,120,0,0.12);
-}
-.hype.small{font-size:16px;padding:8px 12px}
-.pulse{animation:pulse 1.6s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-.options{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-.option{
-  background:rgba(255,255,255,0.02);
-  border-radius:12px;padding:12px 14px;cursor:pointer;font-weight:800;text-align:center;
-  border:1px solid rgba(255,255,255,0.04);
-  box-shadow:0 8px 30px rgba(0,0,0,0.5);
-  transition:transform .16s,box-shadow .16s,background .16s;
-}
-.option:hover{transform:translateY(-6px);box-shadow:0 18px 46px rgba(255,90,0,0.12);background:linear-gradient(90deg,rgba(255,90,0,0.08),rgba(255,150,0,0.06));}
-.option.selected{background:linear-gradient(90deg,rgba(255,120,0,0.18),rgba(255,60,0,0.12));color:#fff;transform:translateY(-8px)}
-.thankyou{text-align:center;padding:6px}
-.thank-h{font-size:20px;margin:6px 0;font-weight:900}
-.thank-sub{color:var();margin-bottom:12px}
-.join-btn{
-  display:inline-block;position:relative;overflow:hidden;
-  background:linear-gradient(90deg,#ff7a00,#ff4d00);
-  color:#fff;padding:12px 18px;border-radius:12px;font-weight:900;text-decoration:none;
-  box-shadow:0 14px 40px rgba(255,90,0,0.18);
-}
-.join-btn::after{content:'';position:absolute;left:-50%;top:0;width:40%;height:100%;background:linear-gradient(120deg,rgba(255,255,255,0)0%,rgba(255,255,255,0.14)50%,rgba(255,255,255,0)100%);transform:skewX(-20deg);filter:blur(6px);animation:shine 3.4s linear infinite}
-@keyframes shine{0%{left:-60%}100%{left:120%}}
-.fomo{background:linear-gradient(90deg,#ffe6d6,#ffd0b3);color:#2b0a00;padding:8px 12px;border-radius:10px;font-weight:800;display:inline-block;margin:10px 0;font-size:13px}
-.small{font-size:13px;color:var();margin-top:8px}
-.row{display:flex;gap:10px;justify-content:center;margin-top:12px}
-.btn-ghost{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-weight:700;text-decoration:none;cursor:pointer}
-@media (max-width:520px){.container{padding:14px}.hype{font-size:18px}}
-</style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Profile Header */
+        .profile-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--accent-blue);
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background-color: var(--accent-blue);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 2px solid var(--bg-color);
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .tag-pill {
+            background-color: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.4);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Primary Call to Action Button */
+        .btn-primary {
+            width: 100%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        /* Feature Card */
+        .card {
+            width: 100%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #e2e8f0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        .check-icon {
+            color: #10b981;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--text-sub);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Stats Strip */
+        .stats-strip {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            font-size: 12px;
+            color: var(--text-sub);
+            padding: 5px 0;
+        }
+
+        /* Footer Nav Links */
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .footer-link {
+            color: #60a5fa;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: var(--text-sub);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-body {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        .modal-body p {
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            color: var(--text-sub);
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-<main class="container" id="card">
-  <div class="progressWrap">
-    <div class="progress"><i id="bar"></i></div>
-    <div class="progressNum" id="progNum">0%</div>
-  </div>
 
-  <div id="q-box">
-    <!-- Single question will be rendered here -->
-  </div>
-</main>
+    <div class="container">
+        <div class="profile-container">
+            <img src="Pankaj11.jpg" alt="Pankaj Bhardwaj" class="profile-img">
+            <div class="badge">✓</div>
+        </div>
 
-<script>
-const telegramLink="https://t.me/+ZrjDtoQ9Tgw3ZWQ1"; // keep your link
-let answered=false;
-const qBox=document.getElementById('q-box'), bar=document.getElementById('bar'), progNum=document.getElementById('progNum');
+        <div class="title">PANKAJ BHARDWAJ</div>
+        <div class="tag-pill">NIFTY • BANKNIFTY • OPTIONS</div>
 
-function renderSingleQuestion(){
-  qBox.innerHTML = `
-    <div class="question">
-      <div class="hype pulse">🔥 LIVE Forex signals — traders are booking profits now!</div>
-      <div style="height:10px"></div>
-      <div class="options">
-        <div class="option" data-val="yes">Yes — send me live signals</div>
-        <div class="option" data-val="no">No — not right now</div>
-      </div>
-      <div class="small">Tap one — it only takes a second. Limited spots available.</div>
+        <a href="https://t.me/+OOr8cIZn0k4xMWRl" class="btn-primary">
+            <span>🚀 JOIN TELEGRAM CHANNEL</span>
+        </a>
+
+        <div class="card">
+            <div class="card-title">📊 Market Intelligence & Analysis</div>
+            
+            <ul class="features-list">
+                <li class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Daily Index & Stock Market Updates</span>
+                </li>
+                <li class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Educational Chart Analysis & Patterns</span>
+                </li>
+                <li class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>FII / DII Data & Market Sentiment Reports</span>
+                </li>
+                <li class="feature-item">
+                    <span class="check-icon">✓</span>
+                    <span>Observational Market Levels For Traders</span>
+                </li>
+            </ul>
+
+            <div class="info-box">
+                <b>Disclaimer:</b> Content shared is strictly for educational and informational purposes only. We are not SEBI registered.
+            </div>
+        </div>
+
+        <a href="https://t.me/+OOr8cIZn0k4xMWRl" class="btn-primary">
+            <span>⚡ ACCESS TELEGRAM COMMUNITY 💎</span>
+        </a>
+
+        <div class="stats-strip">
+            <span>🔒 Educational Content</span>
+            <span>•</span>
+            <span>👥 Active Community</span>
+            <span>•</span>
+            <span>📈 Daily Updates</span>
+        </div>
+
+        <div class="footer-nav">
+            <span class="footer-link" onclick="openModal('about')">About Us</span>
+            <span class="footer-link" onclick="openModal('terms')">Terms & Conditions</span>
+            <span class="footer-link" onclick="openModal('privacy')">Privacy Policy</span>
+            <span class="footer-link" onclick="openModal('disclaimer')">Disclaimer</span>
+            <span class="footer-link" onclick="openModal('contact')">Contact Us</span>
+        </div>
+
+        <div class="copyright">
+            © Pankaj Bhardwaj — Market Intelligence. All Rights Reserved.
+        </div>
     </div>
-  `;
-  updateProgress(0);
-  document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',onChooseSingle));
-}
 
-function updateProgress(pct){
-  bar.style.width = pct + "%";
-  progNum.textContent = pct + "%";
-}
-
-function onChooseSingle(ev){
-  if(answered) return;
-  answered=true;
-  const el = ev.currentTarget;
-  const val = el.getAttribute('data-val');
-  document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
-  el.classList.add('selected');
-  setTimeout(()=>{ updateProgress(100); showResultFor(val); },220);
-}
-
-function sendSubscribe(eventName, payload){
-  try{ fbq('track', eventName, payload || {}); }catch(e){}
-}
-
-function showResultFor(val){
-  if(val === 'yes'){
-    qBox.innerHTML = `
-      <div class="thankyou">
-        <div class="hype small">You're moments away from live signals 🚀</div>
-        <div class="thank-sub">Join now to get instant trade alerts and setups used by active members.</div>
-        <div><span class="fomo">⚡ Limited VIP spots — join before it fills up!</span></div>
-        <div class="row" style="margin-top:14px">
-          <a id="joinBtn" class="join-btn" href="${telegramLink}" target="_blank" rel="noopener">Join Telegram Now →</a>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-title" class="modal-header">Title</div>
+            <div id="modal-body" class="modal-body">Content goes here...</div>
         </div>
-        <div class="count" style="margin-top:12px">Redirecting in <span id="count">7</span>s...</div>
-      </div>
-    `;
-    sendSubscribe('Subscribe', {interested: 'yes'});
-    let t=7; const count=document.getElementById('count');
-    const timer=setInterval(()=>{ t--; if(count) count.textContent = t; if(t<=0){ clearInterval(timer); sendSubscribe('CompleteRegistration',{interested:'yes'}); window.location.href = telegramLink; } },1000);
-    setTimeout(()=>{ const jb=document.getElementById('joinBtn'); if(jb) jb.addEventListener('click',()=>sendSubscribe('SubscribeClick',{interested:'yes'})); },50);
-  } else {
-    qBox.innerHTML = `
-      <div class="thankyou">
-        <div class="hype small">No problem — take your time 🙂</div>
-        <div class="thank-sub">We have free guides and community resources if you want to explore later.</div>
-        <div class="row">
-          <button id="backBtn" class="btn-ghost">Back</button>
-          <a id="learnBtn" class="join-btn" href="${telegramLink}" target="_blank" rel="noopener">See Resources →</a>
-        </div>
-        <div class="small">You can always come back and join the signals later.</div>
-      </div>
-    `;
-    sendSubscribe('Subscribe', {interested: 'no'});
-    setTimeout(()=>{ const bb=document.getElementById('backBtn'); if(bb) bb.addEventListener('click', ()=>{ answered=false; renderSingleQuestion(); }); },50);
-    setTimeout(()=>{ const lb=document.getElementById('learnBtn'); if(lb) lb.addEventListener('click', ()=>sendSubscribe('LearnClick',{interested:'no'})); },50);
-  }
-}
+    </div>
 
-// initial render
-renderSingleQuestion();
-</script>
+    <script>
+        const modalData = {
+            about: {
+                title: "About Us",
+                content: "<p>Welcome to Pankaj Bhardwaj Market Intelligence. We provide daily market analysis, technical updates, and educational insights regarding Nifty, BankNifty, and Stock Options to help traders understand market trends better.</p>"
+            },
+            terms: {
+                title: "Terms & Conditions",
+                content: "<p>By accessing our channel or platform, you agree to these terms. All updates provided are strictly for educational and information purposes. We do not offer guaranteed returns or personal financial advice.</p>"
+            },
+            privacy: {
+                title: "Privacy Policy",
+                content: "<p>We respect your privacy. We do not sell, rent, or trade your personal information with third parties. Any analytical pixels used are solely for performance tracking and user experience improvement.</p>"
+            },
+            disclaimer: {
+                title: "Disclaimer",
+                content: "<p>Stock market trading and options trading involve substantial risk of loss and are not suitable for every investor. We are NOT SEBI registered financial advisors. Please consult a certified financial advisor before making any investment decisions.</p>"
+            },
+            contact: {
+                title: "Contact Us",
+                content: "<p>For any queries, support, or complaints, please contact us via Telegram or email us at: <b>support@yourdomain.com</b></p>"
+            }
+        };
+
+        function openModal(key) {
+            document.getElementById('modal-title').innerText = modalData[key].title;
+            document.getElementById('modal-body').innerHTML = modalData[key].content;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
